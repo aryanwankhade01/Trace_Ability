@@ -22,31 +22,6 @@
 
 ---
 
-## 🌐 LIVE NEURAL INTERFACE :
-
-<p align="center">
-  <a href="https://trace-ability-io6r.vercel.app/">
-  <img src="https://img.shields.io/badge/LIVE_DASHBOARD-https%3A%2F%2Ftrace--ability.vercel.app-FFE015?style=for-the-badge&logo=vercel&logoColor=white&labelColor=111111" height="55"/>
-</a>
-</p>
-<br><br>
-
-> [!IMPORTANT]
-**Hackathon submission note:** The first ~38 seconds of the demo video appear blank due to a recording/export issue. The actual demo begins at **00:38**.
-> ## 🎥 SYSTEM TELEMETRY NOTE (DEMO VIDEO)
-> Technical reasoning, live logs, and the dashboard deep-dive begin at **00:38**
-> <p align="center"> <h3><p align="center"><a href="https://1drv.ms/v/c/db6afeda21cc0776/IQAnY3Pj4IQQT55LGvJqNt1rAY4aX1DEy1XHru6L4NF-3iM?e=Tet8ZZ"><b><font color="#FFD700">▶ WATCH THE SYSTEM DEMO HERE</font></b></a></p></h3> 
-
-<br>
-
-# <img src="assets/deep_learning.svg" height="50" width="50" align="top"> TRACE-ABILITY SYSTEMS :
-**Trace-Ability acts as a Cognitive Black Box Recorder for software architecture**. Instead of only storing code diffs, it captures the **reasoning** and **architectural intent** behind each developer commit.
-The system analyzes modified files, reconstructs the likely purpose of the change, and stores these insights as structured telemetry - creating a traceable record of how the system evolves.
-<br>
-
----
-
-
 ## <img src="assets/idea.svg" height="40" width="40" align="top"> THE "CONTEXT COLLAPSE" ANOMALY :
 
 | The Flaw | The Catalyst | The Reality |
@@ -263,7 +238,7 @@ pip install -r requirements.txt
 
 <div align="center">
   <h3 style="color: #FF4500; font-family: 'Courier New', Courier, monospace; letter-spacing: 2px;">
-     <img src="assets/sparkle.svg" width="20" style="vertical-align: middle; margin-right: 15px;"> 𝐋𝐄𝐀𝐃 𝐄𝐍𝐆𝐈𝐍𝐄𝐄𝐑-  <span style="color: #FFFFFF;">𝕾𝖔𝖍𝖆𝖒 𝕽𝖆𝖏𝖕𝖚𝖙</span> 
+     <img src="assets/sparkle.svg" width="20" style="vertical-align: middle; margin-right: 15px;"> 𝐋𝐄𝐀𝐃 𝐄𝐍𝐆𝐈𝐍𝐄𝐄𝐑-  <span style="color: #FFFFFF;"> Aryan Wankhade</span> 
   </h3> <p align="center">
  
 </p>
@@ -273,7 +248,7 @@ pip install -r requirements.txt
   <div style="display: flex; justify-content: center; align-items: center; gap: 100px;">     
     <div style="text-align: center;">
      <h3>  Architected with </h3>
-      <img src="https://github.com/sohamrajput98/EduShield/blob/main/assets/love.svg" width="70" height="70" style="vertical-align: middle;">
+      <img  width="70" height="70" style="vertical-align: middle;">
     </div>
     <div style="text-align: center;">
       <p>
