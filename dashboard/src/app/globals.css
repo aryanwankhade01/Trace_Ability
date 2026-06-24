@@ -1,0 +1,204 @@
+@import "tailwindcss";
+
+
+@theme {
+  --color-graphite: #0A0C10;
+  --color-gold: #05070A;
+}
+
+body {
+  background-color: #0A0C10;
+  
+  background-image: 
+    linear-gradient(rgba(212, 175, 55, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(212, 175, 55, 0.03) 1px, transparent 1px);
+  background-size: 30px 30px;
+  overflow: hidden; 
+}
+
+.glow-gold {
+  text-shadow: 0 0 15px rgba(212, 175, 55, 0.5);
+}
+
+.metallic-white {
+  color: #FFFFFF;
+  text-shadow: 0 0 20px rgba(255, 255, 255, 0.15);
+}
+
+
+::-webkit-scrollbar {
+  width: 16px; 
+  background: transparent;
+}
+
+::-webkit-scrollbar-track {
+  background: #0A0C10;
+  
+  border-left: 1px solid rgba(255, 255, 255, 0.02); 
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: rgba(254, 238, 184, 0.205); 
+  border-radius: 20px;
+  
+  border: 5px solid #0A0C10; 
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(248, 238, 203, 0.781); 
+  border: 4px solid #0A0C10; 
+}
+
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: 12px;
+}
+
+@keyframes scrollY {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-50%); } 
+}
+
+
+
+.ekg-svg polyline {
+  fill: none;
+  stroke-width: 5; 
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.ekg-back {
+  stroke: rgba(212, 175, 55, 0.3); 
+}
+
+.ekg-front {
+  stroke: #05070A; 
+  stroke-dasharray: 48, 144;
+  stroke-dashoffset: 192;
+  animation: ekg_dash 2s linear infinite;
+  filter: drop-shadow(0 0 8px rgba(212, 175, 55, 1)); 
+}
+
+.ekg-front.delay {
+  animation-delay: 1s;
+}
+
+@keyframes ekg_dash {
+  72.5% { opacity: 0; }
+  to { stroke-dashoffset: 0; }
+}
+
+
+/* Expanding Dots Animation */
+.loader-dots {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  --animation: 2s ease-in-out infinite;
+  --theme-color: #05070A; 
+}
+
+.loader-dots .circle-dot {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  width: 20px;
+  height: 20px;
+  border: solid 2px transparent;
+  border-radius: 50%;
+  margin: 0 8px;
+  background-color: transparent;
+  animation: circle-keys var(--animation);
+  border-color: var(--theme-color);
+}
+
+.loader-dots .circle-dot .dot {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background-color: var(--theme-color);
+  animation: dot-keys var(--animation);
+}
+
+.loader-dots .circle-dot .outline {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  animation: outline-keys var(--animation);
+}
+
+/* Staggered animation delays */
+.loader-dots .circle-dot:nth-child(2),
+.loader-dots .circle-dot:nth-child(2) .dot { animation-delay: 0.3s; }
+.loader-dots .circle-dot:nth-child(3),
+.loader-dots .circle-dot:nth-child(3) .dot { animation-delay: 0.6s; }
+.loader-dots .circle-dot:nth-child(4),
+.loader-dots .circle-dot:nth-child(4) .dot { animation-delay: 0.9s; }
+
+.loader-dots .circle-dot:nth-child(1) .outline { animation-delay: 0.9s; }
+.loader-dots .circle-dot:nth-child(2) .outline { animation-delay: 1.2s; }
+.loader-dots .circle-dot:nth-child(3) .outline { animation-delay: 1.5s; }
+.loader-dots .circle-dot:nth-child(4) .outline { animation-delay: 1.8s; }
+
+@keyframes circle-keys {
+  0% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.5); opacity: 0.3; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+@keyframes dot-keys {
+  0% { transform: scale(1); }
+  50% { transform: scale(0); }
+  100% { transform: scale(1); }
+}
+
+@keyframes outline-keys {
+  0% { 
+    transform: scale(0); 
+    outline: solid 15px var(--theme-color); 
+    outline-offset: 0; 
+    opacity: 1; 
+  }
+  100% { 
+    transform: scale(1); 
+    outline: solid 0 transparent; 
+    outline-offset: 15px; 
+    opacity: 0; 
+  }
+}
+
+/* --- UIVERSE RADAR --- */
+.svg-frame {
+  position: relative;
+  width: 300px;
+  height: 300px;
+  transform-style: preserve-3d;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.svg-frame svg {
+  position: absolute;
+  transition: .5s;
+  z-index: calc(1 - (0.2 * var(--j)));
+  transform-origin: center;
+  width: 344px;
+  height: 344px;
+  fill: none;
+}
+.svg-frame:hover svg {
+  transform: rotate(-80deg) skew(30deg) translateX(calc(45px * var(--i))) translateY(calc(-35px * var(--i)));
+}
+.svg-frame svg #center { transition: .5s; transform-origin: center; }
+.svg-frame:hover svg #center { transform: rotate(-30deg) translateX(45px) translateY(-3px); }
+#out2 { animation: rotate16 7s ease-in-out infinite alternate; transform-origin: center; }
+#out3 { animation: rotate16 3s ease-in-out infinite alternate; transform-origin: center; stroke: #05070A; } /* Gold */
+#inner3, #inner1 { animation: rotate16 4s ease-in-out infinite alternate; transform-origin: center; }
+#center1 { fill: #05070A; animation: rotate16 2s ease-in-out infinite alternate; transform-origin: center; } /* Gold */
+@keyframes rotate16 { to { transform: rotate(360deg); } }
